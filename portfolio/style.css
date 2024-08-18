@@ -2,12 +2,69 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
   border: red 1px solid;
+}
+
+:root {
+  /*Colors*/
+
+  --color-red: #D62C2C;
+  --color-lightblue: #465B67;
+  --color-darkblue: #2F4858;
+  --color-font: #465B67;
 }
 
 body {
   background-image: url(public/assets/background.png);
   background-color: #FFFFFF;
+}
+
+li {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.042vw;
+  color: var(--color-darkblue);
+}
+
+h1 {
+  font-size: 10.417vw;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  overflow: hidden;
+  color: var(--color-red);
+}
+
+h2 {
+  font-size: 12.5vw;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-lightblue);
+}
+
+label {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.625vw;
+  color: var(--color-darkblue);
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.833vw;
+  color: var(--color-darkblue);
+}
+
+#home {
+  margin-top: 50px;
 }
 
 .navigation-bar {
@@ -47,23 +104,35 @@ body {
 
   .paragraph {
     display: flex;
-    flex: 45%;
+    justify-content: center;
+    align-items: center;
+    flex: 50%;
+
+    p {
+      width: 40%;
+      text-align: end;
+      font-weight: 500;
+    }
   }
 
   .title {
     display: flex;
     flex: 45%;
     justify-content: flex-end;
-    font-size: 200px;
   }
 
   .label {
     display: flex;
-    flex: 10%;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(90deg);
-    white-space: nowrap; 
+    flex: 5%;
+    margin-left: 20px;
+    margin-top: 0.7vw;
+    align-items: start;
+    justify-content: start;
+    
+    label {
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+    }
   }
 }
 
@@ -73,8 +142,6 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 200px; /* Adjust based on your design */
-  font-size: 160px;
   overflow: visible;
 
   h2 {
@@ -96,22 +163,30 @@ body {
 
   .label {
     display: flex;
-    flex: 10%;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(-90deg);
-    white-space: nowrap; 
+    flex: 5%;
+    margin-right: 20px;
+    margin-top: 0.7vw;
+    align-items: start;
+    justify-content: end;
+    
+    label {
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+      transform: rotate(180deg);
+    }
   }
 
   .title {
     display: flex;
-    flex: 45%;
-    font-size: 200px;
+    flex: 48%;
   }
 
   .button-dark {
     display: flex;
-    flex: 45%;
+    justify-content: end;
+    align-items: end;
+    margin: 20px;
+    flex: 50%;
   }
 
 }
