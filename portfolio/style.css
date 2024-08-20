@@ -3,7 +3,7 @@
   padding: 0;
   overflow-x: hidden;
   box-sizing: border-box;
-  
+  cursor: none;
 }
 
 :root {
@@ -14,6 +14,7 @@
   --color-darkblue: #2F4858;
   --color--beige: #FFF0D2;
   --color-font: #465B67;
+  --color-lightfont: #FAFAFA;
 }
 
 body {
@@ -91,6 +92,67 @@ p {
   font-size: 0.833vw;
   color: var(--color-darkblue);
 }
+
+.button-dark .border {
+  padding: 0.4vw;
+  border-radius: 0.208vw;
+  background: 
+      linear-gradient(90deg, var(--color-darkblue) 50%, transparent 0) repeat-x,
+      linear-gradient(90deg, var(--color-darkblue) 50%, transparent 0) repeat-x,
+      linear-gradient(0deg, var(--color-darkblue) 50%, transparent 0) repeat-y,
+      linear-gradient(0deg, var(--color-darkblue) 50%, transparent 0) repeat-y;
+      background-size: 0.521vw 0.104vw, 0.521vw 0.104vw, 0.104vw 0.521vw, 0.104vw 0.521vw;
+      background-position: 0 0, 0 100%, 0 0, 100% 0;
+      animation: linearGradientMove .3s infinite linear;
+
+      &:hover {
+        animation: linearGradientStop .3s infinite linear;
+    }
+}
+
+@keyframes linearGradientMove {
+  100% {
+      background-position: 0.521vw 0, -0.521vw 100%, 0 -0.521vw, 100% 0.521vw;
+  }
+} 
+
+@keyframes linearGradientStop {
+  100% {
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+  }
+} 
+
+
+.button-dark .background {
+  background-color: var(--color-darkblue);
+  padding: 0.5vw;
+  border-radius: 0.208vw;
+  width: 6.25vw;
+  height: 2vw;
+  font-size: 1.042vw;
+  line-height: 1vw;
+  overflow: hidden;
+  opacity: 1;
+  animation: blink 4s ease-in-out infinite;
+}
+
+/*@keyframes blink {
+  0% { opacity: 1; }
+  15% { opacity: 0.85; }
+  50% { opacity: 1; }
+  80% { opacity: 0.8; }
+  100% { opacity: 1; }
+}*/
+
+.button-dark p {
+  color: var(--color-lightfont);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 550;
+  
+}
+
 /*Navigation Menu Styling*/
 .navigation-bar {
   position: fixed;
@@ -222,6 +284,7 @@ p {
     align-items: end;
     margin: 20px;
     flex: 50%;
+    margin-right: 5%;
   }
 
 }
@@ -304,5 +367,50 @@ p {
   height: 100vh;
   background-color: var(--color-darkblue);
   z-index: 3;
+}
+
+/* CSS */
+.cursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--color-darkblue);
+  transition: transform 0.2s ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.cursor2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-lightblue);
+  opacity: 0.6;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.3s, height 0.3s, opacity 0.3s, background-color 0.3s;
+  z-index: 999;
+}
+
+.cursor .click {
+  transform: scale(0.8);
+}
+
+.hover {
+  background-color: var(--color-red);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: 0.9;
+  background-color: var(--color-red);
 }
 
