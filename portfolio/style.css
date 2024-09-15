@@ -19,7 +19,7 @@
 }
 
 body {
-  background-image: url(public/assets/background.png);
+  background-image: url(/assets/background.png);
   background-color: #FFFFFF;
 }
 
@@ -222,6 +222,8 @@ p {
     
     li {
       margin-left: 1.302vw;
+      transition: color 0.5s ease;
+      transition: font-family 0.5s ease;
     }
   }
 
@@ -234,6 +236,23 @@ p {
       width: auto;
     }
   }
+}
+
+.navigation-bar.about-active ul li{
+  color: var(--color-lightfont);
+}
+
+.navigation-bar.footer-active ul li{
+  color: #333333;
+}
+
+.navigation-bar ul li {
+  font-family: 'Roboto', sans-serif;
+  transition: font-family 0.5s ease;
+}
+
+.navigation-bar.home-active .nav-home,.navigation-bar.home-active .nav-about,.navigation-bar.home-active .nav-projects {
+  font-family: 'Libre Barcode 128 Text', sans-serif;
 }
 
 /*Landing Section Styling*/
@@ -418,7 +437,6 @@ p {
   z-index: 3;
   display: flex;
   flex-direction: row;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -428,6 +446,7 @@ p {
   align-items: end;
   flex: 40%;
   flex-direction: column;
+  overflow: hidden;
 
   img {
     position: absolute;
@@ -516,6 +535,7 @@ footer {
   width: 100%;
   height: 7.813vw;
   z-index: 999;
+  overflow: hidden;
 
   div {
     display: flex;
@@ -532,6 +552,7 @@ footer {
     display: flex;
     justify-content: end;
     margin-right: 1.302vw;
+    overflow: hidden;
 
     nav {
       display: flex;
