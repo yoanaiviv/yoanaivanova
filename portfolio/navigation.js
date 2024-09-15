@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const projectsSection = document.getElementById('projects');
     const homeSection = document.getElementById('home');
     const footer = document.querySelector('footer');
-  
+
     // Function to check if an element is in the viewport
     function isInViewport(element) {
       const rect = element.getBoundingClientRect();
@@ -14,20 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Scroll event listener
     window.addEventListener('scroll', function() {
-      const aboutInView = isInViewport(aboutSection);
-      const projectsInView = isInViewport(projectsSection);
       const homeInView = isInViewport(homeSection);
       const footerInView = isInViewport(footer);
   
-      if (aboutInView) {
-        logo.src = "/assets/logo-light.png"; 
-        navBar.classList.add('about-active');
-        navBar.classList.remove('projects-active', 'home-active', 'footer-active');
-      } else if (projectsInView) {
-        logo.src = "/assets/logo.svg"; 
-        navBar.classList.add('projects-active');
-        navBar.classList.remove('about-active', 'home-active', 'footer-active');
-      } else if (homeInView) {
+      if (homeInView) {
         logo.src = "/assets/logo.svg"; 
         navBar.classList.add('home-active');
         navBar.classList.remove('about-active', 'projects-active', 'footer-active');
@@ -40,5 +30,48 @@ document.addEventListener("DOMContentLoaded", function() {
         navBar.classList.remove('about-active', 'projects-active', 'home-active', 'footer-active');
       }
     });
-  });
+
+
+// Function to check the position of the about section
+function checkAboutSection() {
+  const navbarHeight = navbar.offsetHeight;
+  const aboutRect = aboutSection.getBoundingClientRect();
+  const overlapPoint = aboutRect.top - navbarHeight;
+
+  if (overlapPoint <= 0 && aboutRect.bottom >= 0) {
+    // Navigation bar is overlapping the About section
+    navbar.classList.add('about-active');
+    navbar.classList.remove('projects-active home-active');
+    logo.src = "/assets/logo-light.png"; 
+  } else {
+    navbar.classList.remove('about-active');
+  }
+}
+
+// Function to check the position of the Projects section
+function checkProjectsSection() {
+  const navbarHeight = navbar.offsetHeight;
+  const projectsRect = projectsSection.getBoundingClientRect();
+  const overlapPoint = projectsRect.top - navbarHeight;
+
+  if (overlapPoint <= 0 && projectsRect.bottom >= 0) {
+    // Navigation bar is overlapping the About section
+    navbar.classList.add('projects-active');
+    navbar.classList.remove('home-active about-active');
+    logo.src = "/assets/logo.svg"; 
+  } else {
+    navbar.classList.remove('projects-active');
+  }
+}
+
+  // Add scroll event listener
+  window.addEventListener('scroll', checkAboutSection);
+  window.addEventListener('scroll', checkProjectsSection);
+
+  // Also check on page load
+  window.addEventListener('load', checkAboutSection);
+  window.addEventListener('load', checkProjectsSection);
+});
+
+
   

@@ -238,12 +238,34 @@ p {
   }
 }
 
-.navigation-bar.about-active ul li{
+
+
+.navigation-bar {
+  --color: var(--color-lightfont); 
+}
+
+.navigation-bar ul li a {
+  color: var(--color-font);
+}
+
+.navigation-bar.about-active ul li a {
   color: var(--color-lightfont);
 }
 
-.navigation-bar.footer-active ul li{
-  color: #333333;
+html {
+  scroll-behavior: smooth;
+}
+
+.navigation-bar ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation-bar ul li a:hover,
+.navigation-bar ul li a:active,
+.navigation-bar ul li a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 .navigation-bar ul li {
@@ -251,7 +273,9 @@ p {
   transition: font-family 0.5s ease;
 }
 
-.navigation-bar.home-active .nav-home,.navigation-bar.home-active .nav-about,.navigation-bar.home-active .nav-projects {
+.navigation-bar.home-active .nav-home,
+.navigation-bar.about-active .nav-about,
+.navigation-bar.projects-active .nav-projects {
   font-family: 'Libre Barcode 128 Text', sans-serif;
 }
 
