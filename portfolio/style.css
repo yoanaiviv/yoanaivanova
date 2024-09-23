@@ -598,3 +598,99 @@ footer {
   }
 }
 
+/* Media Query for Phones */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 20vw;
+  }
+
+  h2 {
+    font-size: 12.5vw;
+  }
+
+  label {
+    font-size: 4vw;
+  }
+
+  p {
+    font-size: 3vw;
+  }
+
+  .button-dark .border {
+    padding: 0vw;
+    margin: 5vw;
+    border-radius: 1.5vw;
+    background: hidden;
+  }
+
+  .button-dark .background {
+    background-color: var(--color-darkblue);
+    border-radius: 1.5vw;
+    width: 30vw;
+    height: 8vw;
+    font-size: 5vw;
+    line-height: 6vw;
+    overflow: hidden;
+  }
+
+  #home {
+    padding: 5vw 5vw 0vw 5vw;
+  }
+
+  .line-one {
+    flex-direction: column;
+    height: 70vw;
+  
+    .paragraph {
+      justify-content: start;
+      flex: 100%;
+
+      p {
+        width: 65%;
+        text-align: start;
+      }
+    }
+  
+    .title {
+      justify-content: end;
+    }
+  
+    .label {
+      visibility: hidden;
+    }
+  }
+  
+  .line-three {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70vw;
+  
+    .label {
+      visibility: hidden;
+    }
+  
+    .title {
+      display: flex;
+      flex: 100%;
+
+      h1 {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  
+    .button-dark {
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      margin: 1.042vw;
+      flex: 50%;
+      margin-right: 5%;
+    }
+  
+  }
+}
