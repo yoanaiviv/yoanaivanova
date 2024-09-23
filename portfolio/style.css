@@ -238,8 +238,6 @@ p {
   }
 }
 
-
-
 .navigation-bar {
   --color: var(--color-lightfont); 
 }
@@ -277,12 +275,17 @@ html {
 .navigation-bar.about-active .nav-about,
 .navigation-bar.projects-active .nav-projects {
   font-family: 'Libre Barcode 128 Text', sans-serif;
+  color: var(--color-red);
+  font-size: 1.5vw;
 }
 
 /*Landing Section Styling*/
 #home {
   margin-top: 2.604vw;
-  height: 100vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .line-one {
@@ -352,6 +355,7 @@ html {
     display: flex;
     flex: 5%;
     margin-right: 1.042vw;
+    margin-bottom: 1.1vw;
     align-items: end;
     justify-content: end;
     
@@ -386,6 +390,7 @@ html {
   justify-content: center;
   position: relative;
   z-index: 2;
+  margin-bottom: 10vw;
 
   .cards {
     margin-left: 5.208vw;
@@ -465,7 +470,7 @@ html {
 }
 
 .about-heading {
-  margin-top: 5.208vw;
+  margin-top: 8vw;
   display: flex;
   align-items: end;
   flex: 40%;
@@ -474,6 +479,7 @@ html {
 
   img {
     position: absolute;
+    bottom: 0;
     display: flex;
     margin: -4vw;
     width: 22vw;
