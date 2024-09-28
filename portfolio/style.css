@@ -814,6 +814,7 @@ footer {
 }
 
 .about-information {
+  overflow: hidden;
   margin-top: -10vw;
   flex: 3;
   .about-text {
@@ -827,5 +828,44 @@ footer {
   width: 75%;
   display: flex;
   justify-content: flex-end;
+}
+
+cursor {
+  display: none;
+}
+
+footer {
+  background-color: #22333D;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 23vw;
+  z-index: 999;
+  overflow: hidden;
+
+  h3 {
+    margin-left: 4vw;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: end;
+    overflow: hidden;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 4vw;
+      border: 1vw solid var(--color-red);
+      border-radius: 2vw;
+      width: 18vw;
+      height: 18vw;
+      padding: 0.8vw;
+      background-color: var(--color-lightblue);
+    }
+  }
 }
 }
