@@ -62,9 +62,8 @@ h3 {
 
 bg {
   display: inline-block;
-  width: auto;
   position: relative;
-  z-index: 1;
+  top: 0.2vw;
 }
 
 bg::before {
@@ -80,9 +79,8 @@ bg::before {
 
 bg-b {
   display: inline-block;
-  width: auto;
   position: relative;
-  z-index: 1;
+  top: 0.2vw;
 }
 
 bg-b::before {
@@ -238,15 +236,7 @@ p {
   }
 }
 
-.navigation-bar {
-  --color: var(--color-lightfont); 
-}
-
-.navigation-bar ul li a {
-  color: var(--color-font);
-}
-
-.navigation-bar.about-active ul li a {
+.navigation-bar.about-active ul li:not(:last-child) a {
   color: var(--color-lightfont);
 }
 
@@ -277,6 +267,16 @@ html {
   font-family: 'Libre Barcode 128 Text', sans-serif;
   color: var(--color-red);
   font-size: 1.5vw;
+  animation: slideInFromTop 0.8s ease-in-out forwards;
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-65%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /*Landing Section Styling*/
@@ -621,6 +621,11 @@ footer {
     font-size: 3vw;
   }
 
+  li {
+    font-size: 4vw;
+  }
+  
+
   .button-dark .border {
     padding: 0vw;
     margin: 5vw;
@@ -636,6 +641,21 @@ footer {
     font-size: 5vw;
     line-height: 6.5vw;
     overflow: hidden;
+  }
+
+  .navigation-bar {
+    margin-top: 5vw;
+    height: 4vw;
+    overflow: hidden;
+
+    li {
+      margin-right: 4vw;
+    }
+  }
+
+  #nav-logo {
+    height: 4vw;
+    width: auto;
   }
 
   /*Home*/
