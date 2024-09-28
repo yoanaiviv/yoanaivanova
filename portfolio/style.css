@@ -643,6 +643,23 @@ footer {
     overflow: hidden;
   }
 
+  .button-light .border {
+    padding: 0vw;
+    margin: 5vw;
+    border-radius: 1.5vw;
+    background: hidden;
+  }
+
+  .button-light .background {
+    background-color: var(--color--beige);
+    border-radius: 1.5vw;
+    width: 30vw;
+    height: 8vw;
+    font-size: 5vw;
+    line-height: 6.5vw;
+    overflow: hidden;
+  }
+
   .navigation-bar {
     margin-top: 5vw;
     height: 5vw;
@@ -663,10 +680,10 @@ footer {
   }
 
   .navigation-bar.home-active .nav-home,
-.navigation-bar.about-active .nav-about,
-.navigation-bar.projects-active .nav-projects {
-  font-size: 5vw;
-}
+  .navigation-bar.about-active .nav-about,
+  .navigation-bar.projects-active .nav-projects {
+      font-size: 5vw;
+  }
 
   /*Home*/
 
@@ -769,4 +786,44 @@ footer {
       box-shadow: 0px 0px 30px 3px rgba(26, 4, 4, 0.05);
     }
   }
+
+  /*About Section Styling*/
+#about {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-darkblue);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.about-heading {
+  margin-top: 30vw;
+  margin-left: 5vw;
+  align-items: start;
+  flex: 1;
+  flex-direction: column;
+
+  img {
+    display: none;
+  }
+}
+
+.about-information {
+  margin-top: -90vw;
+  flex: 3;
+  .about-text {
+    color: #FAFAFA;
+    width: 80%;
+  }
+}
+
+.about-information .button {
+  margin-top: 10vw;
+  width: 75%;
+  display: flex;
+  justify-content: flex-end;
+}
 }
