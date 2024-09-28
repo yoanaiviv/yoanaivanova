@@ -808,11 +808,13 @@ footer {
 
   img {
     display: none;
+    height: 10vw;
+    width: auto;
   }
 }
 
 .about-information {
-  margin-top: -90vw;
+  margin-top: -10vw;
   flex: 3;
   .about-text {
     color: #FAFAFA;
