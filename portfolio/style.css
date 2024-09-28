@@ -645,7 +645,7 @@ footer {
 
   .navigation-bar {
     margin-top: 5vw;
-    height: 4vw;
+    height: 5vw;
     overflow: hidden;
 
     li {
@@ -653,10 +653,20 @@ footer {
     }
   }
 
-  #nav-logo {
-    height: 4vw;
-    width: auto;
+  .navigation-bar nav {
+    margin-left: 4vw;
+
+    img {
+      height: 4vw;
+      width: auto;
+    }
   }
+
+  .navigation-bar.home-active .nav-home,
+.navigation-bar.about-active .nav-about,
+.navigation-bar.projects-active .nav-projects {
+  font-size: 5vw;
+}
 
   /*Home*/
 
